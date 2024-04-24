@@ -1,0 +1,59 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="600" d:DesignHeight="450"
+        x:Class="AvaloniaAppBegining.MainWindow"
+        Title="AvaloniaAppBegining">
+    <Window.Styles>
+        <StyleInclude Source="/MainWindowStyles.axaml"/>
+    </Window.Styles>
+    <Grid RowDefinitions="Auto, *, Auto"
+          Classes="Wrapper"
+          ShowGridLines="True">
+        <StackPanel Grid.Row="0">
+            <Menu>
+                <MenuItem Header="_Save" Click="Save_OnClick" HotKey="Ctrl+S"/>
+                <MenuItem Header="_Clear" Click="Clear_OnClick" HotKey="Ctrl+D"/>
+            </Menu>
+        </StackPanel>
+        <Grid Grid.Row="1"
+              ColumnDefinitions="*, 2*"
+              ShowGridLines="True">
+            <StackPanel Grid.Column="0">
+                <TextBlock Text="Item 1"/>
+                <TextBlock Text="Item 2"/>
+                <TextBlock Text="Item 3"/>
+                <TextBlock Text="Item 4"/>
+            </StackPanel>
+            <StackPanel Grid.Column="1">
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="First name"
+                           Classes="Input"/>
+                    <TextBox x:Name="InputFirstName" 
+                             Classes="Input"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Last name"
+                           Classes="Input"/>
+                    <TextBox x:Name="InputLastName" 
+                             Classes="Input"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal"
+                            Classes="Buttons">
+                    <Button x:Name="ButtonSave" 
+                            Content="_Save"
+                            Classes="Save"
+                            Click="Save_OnClick"/>
+                    <Button x:Name="ButtonClear"
+                            Content="_Clear"
+                            Classes="Clear"
+                            Click="Clear_OnClick"/>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+        <StackPanel Grid.Row="2">
+            <TextBlock x:Name="StatusBar"/>
+        </StackPanel>
+    </Grid>
+</Window>
